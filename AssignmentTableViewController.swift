@@ -17,7 +17,7 @@ class AssignmentTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //loadData()
+        loadData()
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "LabelCell")
         
         // Uncomment the following line to preserve selection between presentations
@@ -51,17 +51,37 @@ class AssignmentTableViewController: UITableViewController {
         //displays the name as the lable in the cell and the duedate as a detail in the cell
         cell.textLabel?.text = assignments[indexPath.row].name
         cell.detailTextLabel?.text = assignments[indexPath.row].duedate
-        //if assignments[indexPath.row].priority == "low"{
-        //    cell.backgroundColor = UIColor.green
-        //}
+        //let color = assignments[indexPath.row].priority
+        cell.backgroundColor = UIColor.green
+
         return cell
     }
-    override func viewWillAppear(_ animated: Bool) {
-        loadData()
+    // reloads the data to the table view controller
+    // sets the table view controller color to lightgrey
+    override func viewDidAppear(_ animated: Bool) {
         self.tableView.reloadData()
+
+    }
+    
+    //deletes all the assignments and reloads the data it isnt loaded twice x
+    override func viewWillAppear(_ animated: Bool) {
+        assignments.removeAll()
+        loadData()
+    }
+    
+    //function deletes row when you slide
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            //removes the row that is selected from the table view controller
+            assignments.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
     }
 
-    
+
+    // loads the data to the table view controller from the .txt file
     func loadData() {
         let file = "data.txt" //this is the file. we will write to and read from it
         let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
@@ -93,9 +113,7 @@ class AssignmentTableViewController: UITableViewController {
         catch {/* error handling here */}
     }
     
-    
-    
-    /*
+        /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
      // Return false if you do not want the specified item to be editable.
@@ -141,3 +159,4 @@ class AssignmentTableViewController: UITableViewController {
      */
     
 }
+    
