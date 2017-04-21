@@ -51,11 +51,13 @@ class AssignmentTableViewController: UITableViewController {
         //displays the name as the lable in the cell and the duedate as a detail in the cell
         cell.textLabel?.text = assignments[indexPath.row].name
         cell.detailTextLabel?.text = assignments[indexPath.row].duedate
-        print(assignments[indexPath.row].priority)
-        let yes = "low"
-        let no = "low"
-        if yes == no{
-        cell.backgroundColor = UIColor.green
+        //resource from http://stackoverflow.com/questions/41149375/string-into-array-in-swift-3
+        var pri = assignments[indexPath.row].priority
+        let array = Array(pri.characters)
+        for char in array{
+            if char == "l"{
+                cell.backgroundColor = UIColor.green
+            }
         }
         return cell
     }
