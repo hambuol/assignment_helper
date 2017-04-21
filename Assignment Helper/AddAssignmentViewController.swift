@@ -9,17 +9,37 @@
 import UIKit
 
 // class controlls the add assignment view controller
-class AddAssignmentViewController: UIViewController {
-    @IBOutlet weak var name: UITextField!
+class AddAssignmentViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    @IBOutlet weak var priorityLable: UILabel!
+    @IBOutlet weak var priority: UIPickerView!
     @IBOutlet weak var duedate: UITextField!
-    @IBOutlet weak var priority: UITextField!
+    @IBOutlet weak var name: UITextField!
+    
+    var thePriority = ["low", "medium", "high"]
     var data:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        priority.delegate = self
+        priority.dataSource = self
+
     }
         
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
-        
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return thePriority.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return thePriority[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        priorityLable.text = thePriority[row]
+    }
 
         // Do any additional setup after loading the view.
     
@@ -38,11 +58,11 @@ class AddAssignmentViewController: UIViewController {
          
         let assignmentName = name.text
         let dueDate = duedate.text
-        let Priority = priority.text
+        let Priority = priorityLable.text
         
         let file = "data.txt" //this is the file. we will write to and read from it
         
-        let assignment = assignmentName! + ", " + dueDate! + ", " + Priority! //assignemtn parameters
+        let assignment = assignmentName! + ", " + dueDate! + ", " + (Priority! as! String) //assignemtn parameters
         
         
         //functions from biran wilkinson 
