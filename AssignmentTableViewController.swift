@@ -11,7 +11,6 @@ import UIKit
 // class controlls the assignment view controller
 class AssignmentTableViewController: UITableViewController {
     //arrar of assignments to display on table view
-    
     var assignments = [Assignment]()
     
     
@@ -52,16 +51,22 @@ class AssignmentTableViewController: UITableViewController {
         cell.textLabel?.text = assignments[indexPath.row].name
         cell.detailTextLabel?.text = assignments[indexPath.row].duedate
         //resource from http://stackoverflow.com/questions/41149375/string-into-array-in-swift-3
+        //takes priority and checks if first charachter, makes collor of cell accordingly
         var pri = assignments[indexPath.row].priority
         let array = Array(pri.characters)
         for char in array{
             if char == "l"{
                 cell.backgroundColor = UIColor.green
             }
+            if char == "m"{
+                cell.backgroundColor = UIColor.yellow
+            }
+            if char == "h"{
+                cell.backgroundColor = UIColor.red
+            }
         }
         return cell
     }
-    
     // reloads the data to the table view controller
     // sets the table view controller color to lightgrey
     override func viewDidAppear(_ animated: Bool) {
