@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E8E4761FEC69B5EC94397B6 /* Pods_Assignment_Helper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7576898A0BB617740159C85D /* Pods_Assignment_Helper.framework */; };
-		A72786061EAFA66D00D4CA37 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72786051EAFA66D00D4CA37 /* CalendarViewController.swift */; };
+		A73381081EB10B9D0019797A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73381071EB10B9D0019797A /* CustomCell.swift */; };
+		A73381101EB110EE0019797A /* Pods_Assignment_Helper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A733810F1EB110EE0019797A /* Pods_Assignment_Helper.framework */; };
+		A73381111EB111500019797A /* JTAppleCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A733810D1EB110D60019797A /* JTAppleCalendar.framework */; };
 		A741C89F1E608BBB00099E22 /* AddAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A741C89E1E608BBB00099E22 /* AddAssignmentViewController.swift */; };
 		A741C8A11E60925A00099E22 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A741C8A01E60925A00099E22 /* SplitViewController.swift */; };
 		A7489D091E562D290086025F /* AssignmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7489D081E562D280086025F /* AssignmentTableViewController.swift */; };
@@ -18,13 +19,16 @@
 		A7DAD1CF1E54BA8F0069116E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAD1CE1E54BA8F0069116E /* AppDelegate.swift */; };
 		A7DAD1D61E54BA8F0069116E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DAD1D51E54BA8F0069116E /* Assets.xcassets */; };
 		A7DAD1D91E54BA8F0069116E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7DAD1D71E54BA8F0069116E /* LaunchScreen.storyboard */; };
+		A7F18C131EB2719400032838 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F18C121EB2719400032838 /* CalendarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		02625AB7097C7C66E11B6A14 /* Pods-Assignment Helper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment Helper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assignment Helper/Pods-Assignment Helper.debug.xcconfig"; sourceTree = "<group>"; };
 		437BB87921B724FBD0DED9F1 /* Pods-Assignment Helper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment Helper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assignment Helper/Pods-Assignment Helper.release.xcconfig"; sourceTree = "<group>"; };
 		7576898A0BB617740159C85D /* Pods_Assignment_Helper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignment_Helper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A72786051EAFA66D00D4CA37 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		A73381071EB10B9D0019797A /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		A733810D1EB110D60019797A /* JTAppleCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JTAppleCalendar.framework; path = "../../Library/Developer/Xcode/DerivedData/Assignment_Helper-edalxiohogiyafaosppcnkhdsxkd/Build/Products/Debug-iphonesimulator/JTAppleCalendar/JTAppleCalendar.framework"; sourceTree = "<group>"; };
+		A733810F1EB110EE0019797A /* Pods_Assignment_Helper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Assignment_Helper.framework; path = "Pods/../build/Release-iphoneos/Pods_Assignment_Helper.framework"; sourceTree = "<group>"; };
 		A741C89E1E608BBB00099E22 /* AddAssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAssignmentViewController.swift; sourceTree = "<group>"; };
 		A741C8A01E60925A00099E22 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		A7489D081E562D280086025F /* AssignmentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssignmentTableViewController.swift; path = ../AssignmentTableViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +40,7 @@
 		A7DAD1D51E54BA8F0069116E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7DAD1D81E54BA8F0069116E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7DAD1DA1E54BA8F0069116E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7F18C121EB2719400032838 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E8E4761FEC69B5EC94397B6 /* Pods_Assignment_Helper.framework in Frameworks */,
+				A73381101EB110EE0019797A /* Pods_Assignment_Helper.framework in Frameworks */,
+				A73381111EB111500019797A /* JTAppleCalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +59,8 @@
 		137F9E2C835A807E8259F914 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A733810F1EB110EE0019797A /* Pods_Assignment_Helper.framework */,
+				A733810D1EB110D60019797A /* JTAppleCalendar.framework */,
 				7576898A0BB617740159C85D /* Pods_Assignment_Helper.framework */,
 			);
 			name = Frameworks;
@@ -79,17 +87,18 @@
 		A7DAD1CD1E54BA8F0069116E /* Assignment Helper */ = {
 			isa = PBXGroup;
 			children = (
-				A72786051EAFA66D00D4CA37 /* CalendarViewController.swift */,
 				A7A006231E5F2FD9006CEFEA /* Main.storyboard */,
 				A741C8A01E60925A00099E22 /* SplitViewController.swift */,
 				A7A0061F1E5F2915006CEFEA /* Assignment.swift */,
 				A741C89E1E608BBB00099E22 /* AddAssignmentViewController.swift */,
 				A7489D081E562D280086025F /* AssignmentTableViewController.swift */,
 				A7DAD1CE1E54BA8F0069116E /* AppDelegate.swift */,
-				A7DAD1D51E54BA8F0069116E /* Assets.xcassets */,
 				A7DAD1D71E54BA8F0069116E /* LaunchScreen.storyboard */,
 				A77CC3301E71C3C900402C82 /* data.txt */,
 				A7DAD1DA1E54BA8F0069116E /* Info.plist */,
+				A73381071EB10B9D0019797A /* CustomCell.swift */,
+				A7F18C121EB2719400032838 /* CalendarViewController.swift */,
+				A7DAD1D51E54BA8F0069116E /* Assets.xcassets */,
 			);
 			path = "Assignment Helper";
 			sourceTree = "<group>";
@@ -228,11 +237,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A72786061EAFA66D00D4CA37 /* CalendarViewController.swift in Sources */,
 				A741C8A11E60925A00099E22 /* SplitViewController.swift in Sources */,
 				A7A006201E5F2915006CEFEA /* Assignment.swift in Sources */,
 				A7489D091E562D290086025F /* AssignmentTableViewController.swift in Sources */,
 				A7DAD1CF1E54BA8F0069116E /* AppDelegate.swift in Sources */,
+				A73381081EB10B9D0019797A /* CustomCell.swift in Sources */,
+				A7F18C131EB2719400032838 /* CalendarViewController.swift in Sources */,
 				A741C89F1E608BBB00099E22 /* AddAssignmentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,7 +366,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = D95ZW6SXTM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos/JTAppleCalendar",
+					"$(PROJECT_DIR)/build/Release-iphoneos",
+				);
 				INFOPLIST_FILE = "Assignment Helper/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Oliver.Assignment-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -370,7 +386,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = D95ZW6SXTM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos/JTAppleCalendar",
+					"$(PROJECT_DIR)/build/Release-iphoneos",
+				);
 				INFOPLIST_FILE = "Assignment Helper/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Oliver.Assignment-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";

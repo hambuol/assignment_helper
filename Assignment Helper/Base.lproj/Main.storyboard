@@ -87,14 +87,13 @@
                 <splitViewController id="ypM-gf-uw0" sceneMemberID="viewController">
                     <connections>
                         <segue destination="zn4-WK-Fdp" kind="relationship" relationship="masterViewController" id="J5Z-aR-yqo"/>
-                        <segue destination="W40-bX-L0k" kind="relationship" relationship="detailViewController" id="HuO-ym-O86"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCA-4f-lJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1137" y="-356"/>
         </scene>
-        <!--Calendar View Controller-->
+        <!--Ib Calendar Data Source-->
         <scene sceneID="4jN-L4-SLh">
             <objects>
                 <viewController id="W40-bX-L0k" customClass="CalendarViewController" customModule="Assignment_Helper" customModuleProvider="target" sceneMemberID="viewController">
@@ -105,12 +104,63 @@
                     <view key="view" contentMode="scaleToFill" id="PBO-Le-gHb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TMR-l2-rx4" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
+                                <rect key="frame" x="7" y="6" width="368" height="462"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="462" id="jft-8H-QzF"/>
+                                    <constraint firstAttribute="width" constant="368" id="mQp-pV-Qny"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ee6-aF-lN0">
+                                    <size key="itemSize" width="108" height="125"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomCell" id="nFe-61-5AS" customClass="CustomCell" customModule="Assignment_Helper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="108" height="125"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="108" height="125"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ez4-PH-Q6O">
+                                                    <rect key="frame" x="33" y="52" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="ez4-PH-Q6O" firstAttribute="centerY" secondItem="nFe-61-5AS" secondAttribute="centerY" id="SNy-My-WBn"/>
+                                            <constraint firstItem="ez4-PH-Q6O" firstAttribute="centerX" secondItem="nFe-61-5AS" secondAttribute="centerX" id="UHa-Rf-e2C"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="ez4-PH-Q6O" id="zPz-mJ-I8K"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="ibCalendarDataSource" destination="W40-bX-L0k" id="9kg-wl-iBu"/>
+                                    <outlet property="ibCalendarDelegate" destination="W40-bX-L0k" id="Pqe-um-2P3"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TMR-l2-rx4" firstAttribute="leading" secondItem="PBO-Le-gHb" secondAttribute="leading" constant="7" id="Wzh-Mr-dh4"/>
+                            <constraint firstItem="bBx-RN-gti" firstAttribute="top" secondItem="TMR-l2-rx4" secondAttribute="bottom" constant="199" id="YZP-8K-bMK"/>
+                            <constraint firstItem="TMR-l2-rx4" firstAttribute="top" secondItem="PBO-Le-gHb" secondAttribute="top" constant="6" id="bvb-7h-LHa"/>
+                            <constraint firstAttribute="trailing" secondItem="TMR-l2-rx4" secondAttribute="trailing" id="oW9-Ee-jeA"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z18-5M-mbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-196" y="-5"/>
+            <point key="canvasLocation" x="-196" y="-5.8470764617691158"/>
         </scene>
         <!--Add Assignment View Controller-->
         <scene sceneID="ug1-LY-4oH">
