@@ -87,13 +87,13 @@
 		A7DAD1CD1E54BA8F0069116E /* Assignment Helper */ = {
 			isa = PBXGroup;
 			children = (
+				A7DAD1D71E54BA8F0069116E /* LaunchScreen.storyboard */,
 				A7A006231E5F2FD9006CEFEA /* Main.storyboard */,
 				A741C8A01E60925A00099E22 /* SplitViewController.swift */,
 				A7A0061F1E5F2915006CEFEA /* Assignment.swift */,
 				A741C89E1E608BBB00099E22 /* AddAssignmentViewController.swift */,
 				A7489D081E562D280086025F /* AssignmentTableViewController.swift */,
 				A7DAD1CE1E54BA8F0069116E /* AppDelegate.swift */,
-				A7DAD1D71E54BA8F0069116E /* LaunchScreen.storyboard */,
 				A77CC3301E71C3C900402C82 /* data.txt */,
 				A7DAD1DA1E54BA8F0069116E /* Info.plist */,
 				A73381071EB10B9D0019797A /* CustomCell.swift */,
