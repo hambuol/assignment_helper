@@ -15,8 +15,38 @@ import JTAppleCalendar
 class CalendarViewController: UIViewController {
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     
-    let formatter = DateFormatter()
+    let ousideMonthColor = UIColor.white
+    let monthColor = UIColor.black
+    let selectedMonthColor = UIColor.yellow
+    //let currentDataSelectedViewColor = UIColor.white
+    
 
+    let formatter = DateFormatter()
+    //changes color of selected cells and cells that are in or out of the month
+    func handleCelltextColor(view: JTAppleCell?, cellState: CellState){
+        guard let validCell = view as? CustomCell else {return}
+        
+        if cellState.isSelected {
+            validCell.dateLabel.textColor = selectedMonthColor
+        }else{
+            if cellState.dateBelongsTo == .thisMonth{
+                validCell.dateLabel.textColor = monthColor
+            }else{
+                validCell.dateLabel.textColor = ousideMonthColor
+            }
+        }
+        
+    }
+    //shows the cell is selected if clicked
+    func handleCellSelected(view: JTAppleCell?, cellState: CellState){
+        guard let validCell = view as? CustomCell else {return}
+        if validCell.isSelected{
+            validCell.selectedView.isHidden = false
+        }else{
+            validCell.selectedView.isHidden = true
+        }
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,36 +88,34 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
         
         cell.dateLabel.text = cellState.text
-        if cellState.isSelected{
-            cell.selectedView.isHidden = false
-        }else{
-            cell.selectedView.isHidden = true
-        }
+        
+        handleCellSelected(view: cell, cellState: cellState)
+        handleCelltextColor(view: cell, cellState: cellState)
+        
         return cell
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        guard let validCell = cell as? CustomCell else {return}
-        validCell.selectedView.isHidden = false
+        handleCellSelected(view: cell, cellState: cellState)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        guard let validCell = cell as? CustomCell else {return}
-        validCell.selectedView.isHidden = true
-        }
+        handleCellSelected(view: cell, cellState: cellState)
+    }
     
 }
 
-extension UIColor{
-    convenience init(colorWithHexValue: Int, alph:CGFloat = 1.0){
-        self.init(
-            red: CGFloat((value & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((value & 0x00FF00) >> 8) / 255.0,
-            
-        
-        
-        )
-    }
-    
-    
-}
+//extension UIColor{
+//    convenience init(colorWithHexValue: Int, alph:CGFloat = 1.0){
+//        self.init(
+//            red: CGFloat((value & 0xFF0000) >> 16) / 255.0,
+//            green: CGFloat((value & 0x00FF00) >> 8) / 255.0,
+//            blue: CGFloat(value & 0x0000FF) / 255.0,
+//            alpha: alpha
+//        
+//        
+//        )
+//    }
+//    
+//    
+//}

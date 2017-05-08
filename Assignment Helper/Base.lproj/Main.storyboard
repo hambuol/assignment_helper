@@ -63,7 +63,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LHz-IY-9Ly" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="818" y="-683"/>
+            <point key="canvasLocation" x="711" y="-683"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QPR-hT-rSA">
@@ -259,7 +259,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4I-je-UUh">
-                                <rect key="frame" x="72" y="182.5" width="71.5" height="20.5"/>
+                                <rect key="frame" x="72" y="183.5" width="71.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -274,7 +274,7 @@
                                 <rect key="frame" x="162.5" y="126" width="26.5" height="30"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e0E-gS-aYf">
-                                <rect key="frame" x="90.5" y="142" width="45" height="20.5"/>
+                                <rect key="frame" x="90.5" y="143" width="45" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWt-45-equ">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="20.5"/>
@@ -284,11 +284,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5YU-JT-Uks">
-                                <rect key="frame" x="27" y="250" width="320" height="216"/>
-                            </pickerView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="quh-ue-Lv5">
-                                <rect key="frame" x="158" y="252" width="59.5" height="20.5"/>
+                                <rect key="frame" x="158.5" y="252" width="59.5" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEw-g8-aeA">
                                         <rect key="frame" x="0.0" y="0.0" width="59.5" height="20.5"/>
@@ -304,22 +301,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5YU-JT-Uks">
+                                <rect key="frame" x="27" y="252" width="320" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="p0v-6y-zKi" secondAttribute="trailing" constant="23" id="9B5-E7-stV"/>
-                            <constraint firstItem="5YU-JT-Uks" firstAttribute="centerX" secondItem="e7r-57-PpT" secondAttribute="centerX" id="IeC-j1-S8X"/>
+                            <constraint firstItem="5YU-JT-Uks" firstAttribute="top" secondItem="p4I-je-UUh" secondAttribute="bottom" constant="48" id="9Ha-lJ-QvT"/>
+                            <constraint firstItem="5YU-JT-Uks" firstAttribute="top" secondItem="quh-ue-Lv5" secondAttribute="top" id="Bow-Lm-6dj"/>
                             <constraint firstItem="rh8-do-lVP" firstAttribute="leading" secondItem="p4I-je-UUh" secondAttribute="trailing" constant="19" id="K9G-zw-Uqn"/>
                             <constraint firstItem="JKv-5C-dcN" firstAttribute="top" secondItem="mEM-aI-9B4" secondAttribute="top" id="P7a-ZE-74F"/>
                             <constraint firstItem="JKv-5C-dcN" firstAttribute="leading" secondItem="rh8-do-lVP" secondAttribute="leading" id="QIv-HA-6f5"/>
                             <constraint firstItem="JKv-5C-dcN" firstAttribute="top" secondItem="8Cv-Fu-AEJ" secondAttribute="bottom" constant="62" id="RP8-UX-jca"/>
                             <constraint firstItem="quh-ue-Lv5" firstAttribute="centerX" secondItem="e7r-57-PpT" secondAttribute="centerX" id="T1Y-hP-xEj"/>
-                            <constraint firstItem="5YU-JT-Uks" firstAttribute="top" secondItem="p4I-je-UUh" secondAttribute="bottom" constant="47" id="YkI-fR-rm0"/>
                             <constraint firstItem="G66-qS-Ybb" firstAttribute="top" secondItem="p0v-6y-zKi" secondAttribute="bottom" constant="31" id="Z1o-xy-clq"/>
                             <constraint firstItem="mEM-aI-9B4" firstAttribute="leading" secondItem="JKv-5C-dcN" secondAttribute="leading" id="b4f-ct-pA4"/>
+                            <constraint firstItem="5YU-JT-Uks" firstAttribute="centerX" secondItem="e7r-57-PpT" secondAttribute="centerX" id="dLd-6n-0VN"/>
                             <constraint firstItem="quh-ue-Lv5" firstAttribute="top" secondItem="rh8-do-lVP" secondAttribute="bottom" constant="51" id="eb5-Jv-NUn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mEM-aI-9B4" secondAttribute="trailing" constant="97" id="g4s-N0-Z8t"/>
-                            <constraint firstItem="5YU-JT-Uks" firstAttribute="top" secondItem="rh8-do-lVP" secondAttribute="bottom" constant="49" id="gzI-en-SRn"/>
                             <constraint firstItem="rh8-do-lVP" firstAttribute="top" secondItem="JKv-5C-dcN" secondAttribute="bottom" constant="15" id="kV2-0o-8P9"/>
                             <constraint firstItem="JKv-5C-dcN" firstAttribute="bottom" secondItem="mEM-aI-9B4" secondAttribute="bottom" id="kVv-43-JgS"/>
                             <constraint firstItem="JKv-5C-dcN" firstAttribute="leading" secondItem="e0E-gS-aYf" secondAttribute="trailing" constant="27" id="lpj-v1-SJ3"/>
