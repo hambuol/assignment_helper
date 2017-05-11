@@ -13,8 +13,10 @@ class AddAssignmentViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     @IBOutlet weak var priorityLable: UILabel!
     @IBOutlet weak var priority: UIPickerView!
-    @IBOutlet weak var duedate: UITextField!
+    @IBOutlet weak var dueDate: UIDatePicker!
     @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var dueDateLabel: UILabel!
+    
     
     var thePriority = ["low", "medium", "high"]
     var data:String = ""
@@ -23,6 +25,16 @@ class AddAssignmentViewController: UIViewController, UIPickerViewDelegate, UIPic
         priority.delegate = self
         priority.dataSource = self
 
+    }
+    
+    //soiurce from http://sourcefreeze.com/ios-datepicker-tutorial-uidatepicker-using-swift/
+    @IBAction func datePickerAction(sender: AnyObject) {
+        //fromats date picker and sets the date to the label
+        var dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        var strDate = dateFormatter.string(from: dueDate.date)
+        self.dueDateLabel.text = strDate
+        
     }
         
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -57,7 +69,7 @@ class AddAssignmentViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBAction func addAssignmentToData(_ sender: UIButton) {
          
         let assignmentName = name.text
-        let dueDate = duedate.text
+        let dueDate = dueDateLabel.text
         let Priority = priorityLable.text
         
         let file = "data.txt" //this is the file. we will write to and read from it
