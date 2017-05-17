@@ -51,7 +51,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Assignments" id="feF-ic-vSR">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="ajX-sH-hxs"/>
+                        <barButtonItem key="leftBarButtonItem" title="Calendar" id="ajX-sH-hxs">
+                            <connections>
+                                <segue destination="W40-bX-L0k" kind="show" id="aeb-Ok-Vp4"/>
+                            </connections>
+                        </barButtonItem>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ymV-iT-00K">
                             <rect key="frame" x="112.5" y="7" width="150" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -108,7 +112,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RER-If-IiY">
-                                <rect key="frame" x="0.0" y="47" width="375" height="670"/>
+                                <rect key="frame" x="0.0" y="91" width="375" height="670"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VZy-Zg-bhu">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -220,16 +224,25 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ls4-k5-2xC">
+                                                            <rect key="frame" x="33" y="96" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
                                                     <constraint firstItem="86J-Kk-6rW" firstAttribute="centerY" secondItem="nFe-61-5AS" secondAttribute="centerY" id="HE2-md-vw3"/>
+                                                    <constraint firstItem="Ls4-k5-2xC" firstAttribute="centerX" secondItem="nFe-61-5AS" secondAttribute="centerX" id="LlZ-C3-aFW"/>
                                                     <constraint firstItem="ez4-PH-Q6O" firstAttribute="centerY" secondItem="nFe-61-5AS" secondAttribute="centerY" id="SNy-My-WBn"/>
                                                     <constraint firstItem="ez4-PH-Q6O" firstAttribute="centerX" secondItem="nFe-61-5AS" secondAttribute="centerX" id="UHa-Rf-e2C"/>
+                                                    <constraint firstItem="Ls4-k5-2xC" firstAttribute="centerY" secondItem="nFe-61-5AS" secondAttribute="centerY" constant="44" id="luX-8M-Ozn"/>
                                                     <constraint firstItem="86J-Kk-6rW" firstAttribute="centerX" secondItem="nFe-61-5AS" secondAttribute="centerX" id="oIb-TP-h12"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="dateLabel" destination="ez4-PH-Q6O" id="zPz-mJ-I8K"/>
+                                                    <outlet property="eventLabel" destination="Ls4-k5-2xC" id="7A0-qW-JGd"/>
                                                     <outlet property="selectedView" destination="86J-Kk-6rW" id="R72-mE-Z3m"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -358,4 +371,7 @@
             <point key="canvasLocation" x="1757.5999999999999" y="-683.20839580209895"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="aeb-Ok-Vp4"/>
+    </inferredMetricsTieBreakers>
 </document>

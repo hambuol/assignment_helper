@@ -31,7 +31,7 @@ class AddAssignmentViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBAction func datePickerAction(sender: AnyObject) {
         //fromats date picker and sets the date to the label
         var dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.dateFormat = "yyyy MM dd"
         var strDate = dateFormatter.string(from: dueDate.date)
         self.dueDateLabel.text = strDate
         
@@ -74,7 +74,7 @@ class AddAssignmentViewController: UIViewController, UIPickerViewDelegate, UIPic
         
         let file = "data.txt" //this is the file. we will write to and read from it
         
-        let assignment = assignmentName! + ", " + dueDate! + ", " + (Priority! as! String) //assignemtn parameters
+        let assignment = assignmentName! + "," + dueDate! + "," + (Priority! as! String) //assignemtn parameters
         
         
         //functions from biran wilkinson

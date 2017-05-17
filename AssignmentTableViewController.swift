@@ -18,7 +18,6 @@ class AssignmentTableViewController: UITableViewController {
         super.viewDidLoad()
         loadData()
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "LabelCell")
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
