@@ -35,6 +35,18 @@ class CalendarViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.calendarView.reloadData()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        assignments.removeAll()
+        loadData()
+    }
+
+
+    
     func setupcalendarview() {
         //setup calendar spacing
         calendarView.minimumLineSpacing = 0
@@ -110,15 +122,13 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
         cell.eventLabel.text = ""
+        //adds assignment to calendar...thank you brian
         for assignment in assignments {
             let strDate = formatter.string(from: date)
             if (assignment.duedate == strDate){
                 cell.eventLabel.text = assignment.name
             }
         }
-        //this is where you should add assignment to calendar
-        
-        
         cell.dateLabel.text = cellState.text
         handleCellSelected(view: cell, cellState: cellState)
         handleCelltextColor(view: cell, cellState: cellState)
@@ -130,14 +140,13 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
         handleCellSelected(view: cell, cellState: cellState)
     }
     
-    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        handleCellSelected(view: cell, cellState: cellState)
-    }
     
+    //func reloads date to calendar when themonth is changed
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         setupViewsOfCalendar(from: visibleDates)
-        //loop through assignments and put them on calendar here
-        print("test")
+        //updates calendar when month is changed
+        self.calendarView.reloadData()
+        
     }
     func loadData() {
         let file = "data.txt" //this is the file. we will write to and read from it
@@ -173,5 +182,4 @@ extension CalendarViewController: JTAppleCalendarViewDelegate{
 }
 
     
-
 

@@ -23,18 +23,18 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cl7-vX-Q3c" id="7pf-7d-pzO">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xr2-eS-vWz">
-                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5qU-m9-dXo">
-                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -224,9 +224,9 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ls4-k5-2xC">
-                                                            <rect key="frame" x="33" y="96" width="42" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ls4-k5-2xC">
+                                                            <rect key="frame" x="37" y="92" width="31" height="14.5"/>
+                                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -234,10 +234,10 @@
                                                 </view>
                                                 <constraints>
                                                     <constraint firstItem="86J-Kk-6rW" firstAttribute="centerY" secondItem="nFe-61-5AS" secondAttribute="centerY" id="HE2-md-vw3"/>
-                                                    <constraint firstItem="Ls4-k5-2xC" firstAttribute="centerX" secondItem="nFe-61-5AS" secondAttribute="centerX" id="LlZ-C3-aFW"/>
+                                                    <constraint firstItem="Ls4-k5-2xC" firstAttribute="centerX" secondItem="nFe-61-5AS" secondAttribute="centerX" constant="-1" id="LlZ-C3-aFW"/>
                                                     <constraint firstItem="ez4-PH-Q6O" firstAttribute="centerY" secondItem="nFe-61-5AS" secondAttribute="centerY" id="SNy-My-WBn"/>
                                                     <constraint firstItem="ez4-PH-Q6O" firstAttribute="centerX" secondItem="nFe-61-5AS" secondAttribute="centerX" id="UHa-Rf-e2C"/>
-                                                    <constraint firstItem="Ls4-k5-2xC" firstAttribute="centerY" secondItem="nFe-61-5AS" secondAttribute="centerY" constant="44" id="luX-8M-Ozn"/>
+                                                    <constraint firstItem="Ls4-k5-2xC" firstAttribute="centerY" secondItem="nFe-61-5AS" secondAttribute="centerY" constant="36.5" id="luX-8M-Ozn"/>
                                                     <constraint firstItem="86J-Kk-6rW" firstAttribute="centerX" secondItem="nFe-61-5AS" secondAttribute="centerX" id="oIb-TP-h12"/>
                                                 </constraints>
                                                 <connections>
