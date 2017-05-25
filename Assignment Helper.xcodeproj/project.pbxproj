@@ -147,7 +147,7 @@
 				TargetAttributes = {
 					A7DAD1CA1E54BA8F0069116E = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = D95ZW6SXTM;
+						DevelopmentTeam = 64643K84XW;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -365,7 +365,7 @@
 			baseConfigurationReference = 02625AB7097C7C66E11B6A14 /* Pods-Assignment Helper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D95ZW6SXTM;
+				DEVELOPMENT_TEAM = 64643K84XW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos/JTAppleCalendar",
@@ -374,7 +374,7 @@
 				INFOPLIST_FILE = "Assignment Helper/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Oliver.Assignment-Helper";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ssfs.Assignment-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -385,7 +385,7 @@
 			baseConfigurationReference = 437BB87921B724FBD0DED9F1 /* Pods-Assignment Helper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D95ZW6SXTM;
+				DEVELOPMENT_TEAM = 64643K84XW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos/JTAppleCalendar",
@@ -394,7 +394,7 @@
 				INFOPLIST_FILE = "Assignment Helper/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Oliver.Assignment-Helper";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ssfs.Assignment-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

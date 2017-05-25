@@ -74,7 +74,7 @@ class AddAssignmentViewController: UIViewController, UIPickerViewDelegate, UIPic
         
         let file = "data.txt" //this is the file. we will write to and read from it
         
-        let assignment = assignmentName! + "," + dueDate! + "," + (Priority! as! String) //assignemtn parameters
+        let assignment = assignmentName! + "," + dueDate! + "," + (Priority!) //assignemtn parameters
         
         
         //functions from biran wilkinson
@@ -102,8 +102,6 @@ class AddAssignmentViewController: UIViewController, UIPickerViewDelegate, UIPic
                 print(data)
             }
             catch {/* error handling here */}
-            
-        
             
         }
         

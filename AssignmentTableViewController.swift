@@ -12,6 +12,7 @@ import UIKit
 class AssignmentTableViewController: UITableViewController {
     //arrar of assignments to display on table view
     var assignments = [Assignment]()
+    var data:String = ""
     
     
     override func viewDidLoad() {
@@ -83,6 +84,23 @@ class AssignmentTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             //removes the row that is selected from the table view controller
+            let file = "data.txt"
+            if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+                
+                let path = dir.appendingPathComponent(file)
+                
+                //reading the file
+                do {
+                    data = try String(contentsOf: path, encoding: String.Encoding.utf8)
+                    data = ""
+                }
+                catch {/* error handling here */}
+                //writing
+                do {
+                    try data.write(to: path, atomically: false, encoding: String.Encoding.utf8)
+                }
+                catch {/* error handling here */}
+            }
             assignments.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {

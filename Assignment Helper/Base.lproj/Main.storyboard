@@ -318,6 +318,7 @@
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addAssignmentToData:" destination="zlx-sH-hLD" eventType="touchUpInside" id="G5e-6D-k1a"/>
+                                    <segue destination="iKN-Fa-bsg" kind="show" id="39o-dx-OcY"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Priority " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEw-g8-aeA">
@@ -368,10 +369,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qzb-eQ-gXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1757.5999999999999" y="-683.20839580209895"/>
+            <point key="canvasLocation" x="1689" y="-811"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="aeb-Ok-Vp4"/>
+        <segue reference="39o-dx-OcY"/>
     </inferredMetricsTieBreakers>
 </document>

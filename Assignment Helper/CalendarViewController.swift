@@ -76,11 +76,11 @@ class CalendarViewController: UIViewController {
     //shows the cell is selected if clicked
     func handleCellSelected(view: JTAppleCell?, cellState: CellState){
         guard let validCell = view as? CustomCell else {return}
-        if validCell.isSelected{
-            validCell.selectedView.isHidden = false
-        }else{
-            validCell.selectedView.isHidden = true
-        }
+//        if validCell.isSelected{
+//            validCell.selectedView.isHidden = false
+//        }else{
+//            validCell.selectedView.isHidden = true
+//        }
         
     }
     
