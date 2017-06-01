@@ -13,6 +13,11 @@ class AssignmentTableViewController: UITableViewController {
     //arrar of assignments to display on table view
     var assignments = [Assignment]()
     var data:String = ""
+    let file = "data.txt"
+    
+
+    
+    
     
     
     override func viewDidLoad() {
@@ -71,10 +76,10 @@ class AssignmentTableViewController: UITableViewController {
     // sets the table view controller color to lightgrey
     override func viewDidAppear(_ animated: Bool) {
         self.tableView.reloadData()
-
+        
     }
     
-    //deletes all the assignments and reloads the data it isnt loaded twice x
+    //deletes all the assignments and reloads the data so it isnt loaded twice
     override func viewWillAppear(_ animated: Bool) {
         assignments.removeAll()
         loadData()
@@ -84,31 +89,15 @@ class AssignmentTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             //removes the row that is selected from the table view controller
-            let file = "data.txt"
-            if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-                
-                let path = dir.appendingPathComponent(file)
-                
-                //reading the file
-                do {
-                    data = try String(contentsOf: path, encoding: String.Encoding.utf8)
-                    data = ""
-                }
-                catch {/* error handling here */}
-                //writing
-                do {
-                    try data.write(to: path, atomically: false, encoding: String.Encoding.utf8)
-                }
-                catch {/* error handling here */}
-            }
             assignments.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            deleteAssignment(index: 0)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
-
-
+    
+    
     // loads the data to the table view controller from the .txt file
     func loadData() {
         let file = "data.txt" //this is the file. we will write to and read from it
@@ -141,7 +130,70 @@ class AssignmentTableViewController: UITableViewController {
         catch {/* error handling here */}
     }
     
-        /*
+    func deleteAll() {
+        //function removes and writes over all the data to remove all asignments
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            
+            let path = dir.appendingPathComponent(file)
+            
+            //reads file and writes over the data, deleting all the assignments 
+            do {
+                //deletes all assignments
+                data = try String(contentsOf: path, encoding: String.Encoding.utf8)
+                data = ""
+            }
+            catch {/* error handling here */}
+            //writing
+            do {
+                try data.write(to: path, atomically: false, encoding: String.Encoding.utf8)
+            }
+            catch {/* error handling here */}
+        }
+
+    }
+    
+    func deleteAssignment(index: Int) {
+
+        //function removes assignment from source file
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            
+            let path = dir.appendingPathComponent(file)
+            
+            //reading the file
+            do {
+                let data = try String(contentsOf: path, encoding: String.Encoding.utf8)
+                print(data)
+            }
+            catch {/* error handling here */}
+            
+            //reading the file
+            do {
+                //deletes all assignments
+                data = try String(contentsOf: path, encoding: String.Encoding.utf8)
+                data = ""
+            }
+            catch {/* error handling here */}
+            
+            //writing
+            do {
+                try data.write(to: path, atomically: false, encoding: String.Encoding.utf8)
+            }
+            catch {/* error handling here */}
+        }
+        
+    }
+    
+    //button removes all assignments and refreshed the view
+    @IBAction func removeAll(_ sender: UIBarButtonItem) {
+        //deletes all of the assignents from the view controller and assignments array
+        //although it does not update table view
+        deleteAll()
+        
+        
+    }
+    
+    
+    /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
      // Return false if you do not want the specified item to be editable.
@@ -187,4 +239,4 @@ class AssignmentTableViewController: UITableViewController {
      */
     
 }
-    
+
