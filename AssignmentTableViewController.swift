@@ -9,11 +9,12 @@
 import UIKit
 
 // class controlls the assignment view controller
-class AssignmentTableViewController: UITableViewController {
+class AssignmentTableViewController: UITableViewController{
     //arrar of assignments to display on table view
     var assignments = [Assignment]()
     var data:String = ""
     let file = "data.txt"
+    var refresher: UIRefreshControl!
     
 
     
@@ -24,6 +25,13 @@ class AssignmentTableViewController: UITableViewController {
         super.viewDidLoad()
         loadData()
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "LabelCell")
+        
+        //code from https://www.youtube.com/watch?v=sUGRDEZaDyQ
+        //code adds and sets up refresher 
+        refresher = UIRefreshControl()
+        refresher.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refresher.addTarget(self, action: #selector(AssignmentTableViewController.loadData), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refresher)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -128,6 +136,11 @@ class AssignmentTableViewController: UITableViewController {
             
         }
         catch {/* error handling here */}
+        
+        //supposed to nd the refreshing of the refresher
+        //refresher.endRefreshing()
+        tableView.reloadData()
+        
     }
     
     func deleteAll() {
@@ -187,7 +200,12 @@ class AssignmentTableViewController: UITableViewController {
     @IBAction func removeAll(_ sender: UIBarButtonItem) {
         //deletes all of the assignents from the view controller and assignments array
         //although it does not update table view
+        
+        //assignments.removeAll()
+        //loadData()
+        //self.tableView.reloadData()
         deleteAll()
+        
         
         
     }
